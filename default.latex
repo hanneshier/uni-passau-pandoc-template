@@ -549,21 +549,21 @@ $endif$
 $endif$
 
 \begin{document}
-$if(has-frontmatter)$
-\frontmatter
-$endif$
-$if(title)$
-$if(beamer)$
-\frame{\titlepage}
-$else$
-\maketitle
-$endif$
-$if(abstract)$
-\begin{abstract}
-$abstract$
-\end{abstract}
-$endif$
-$endif$
+% $if(has-frontmatter)$
+% \frontmatter
+% $endif$
+% $if(title)$
+% $if(beamer)$
+% \frame{\titlepage}
+% $else$
+% \maketitle
+% $endif$
+% $if(abstract)$
+% \begin{abstract}
+% $abstract$
+% \end{abstract}
+% $endif$
+% $endif$
 
 $for(include-before)$
 $include-before$
@@ -588,6 +588,7 @@ $if(colorlinks)$
 $endif$
 \setcounter{tocdepth}{$toc-depth$}
 \tableofcontents
+\newpage
 }
 $endif$
 $endif$
