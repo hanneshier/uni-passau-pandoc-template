@@ -1,3 +1,7 @@
 *.pdf
+
 .vscode/
+.obsidian/
+
+.trash/
 .DS_Store
