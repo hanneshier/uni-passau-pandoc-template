@@ -1,0 +1,23 @@
+pandoc
+-f ${fromFormat}
+--resource-path="${currentDir}"
+--resource-path="${attachmentFolderPath}"
+--lua-filter="${luaDir}/pdf.lua"
+--template="./default.latex"
+--metadata="lang:de-DE"
+--metadata="link-citations:true"
+--metadata="link-bibliography:true"
+--metadata="reference-section-title:Literatur"
+--metadata="top-level-division:part"
+--variable="logo:./img/logo-sobi.png"
+--variable="geometry:left=3cm"
+--variable="geometry:right=2.5cm"
+--variable="geometry:top=2cm"
+--variable="geometry:bottom=2cm"
+--variable="linestretch:1.5"
+--variable="fontsize:12pt"
+--variable="papersize:a4"
+--variable="documentclass:article"
+--variable="fontfamily:tgtermes"
+-o "${outputPath}"
+-t pdf
