@@ -548,6 +548,51 @@ $if(logo)$
 $endif$
 $endif$
 
+% +++++++++ Mein Template Änderungen +++++++++
+\usepackage{blindtext}
+\usepackage{titling}
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[R]{\thepage}
+
+\usepackage[export]{adjustbox}
+
+\newcommand{\lehrstuhl}[3]{
+    \noindent\begin{minipage}{0.5\linewidth}
+        {#1}\\
+        {#2}\\
+        {#3}
+    \end{minipage}
+    \hfill%
+    \begin{minipage}{0.4\linewidth}
+        \flushright
+        \includegraphics[width=5.5cm, valign=t]{$logo$}
+    \end{minipage}
+}
+
+\newcommand{\veranstaltung}[3]{
+\begin{center}
+    {#1}\\
+    {#2}\\
+    {#3}
+\end{center}
+}
+
+\newcommand{\titel}[2]{
+\begin{center}
+    \huge{#1}\\[1cm]
+\end{center}
+}
+
+% +++++++++ Ende Mein Template +++++++++
+
 \begin{document}
 % $if(has-frontmatter)$
 % \frontmatter
@@ -564,6 +609,50 @@ $endif$
 % \end{abstract}
 % $endif$
 % $endif$
+
+\title{$title$}
+\author{$author$}
+\date{$date$}
+
+% +++++++++ Mein Template Änderungen +++++++++
+\begin{titlepage}
+
+    \lehrstuhl{Universität Passau}
+    {$MeinLehrstuhl$}
+    {$MeinProf$}
+    % \lehrstuhl{Universität Passau}
+    % {$if(MeinLehrstuhl)$$MeinLehrstuhl$$else$Standard Lehrstuhl$endif$}
+    % {$if(MeinProf)$$MeinProf$$else$Standard Professor$endif$}
+    
+    \vspace{4cm}
+    
+    \veranstaltung{$MeineVeranstaltung$}
+    {$MeinSemester$}
+    {$MeinDozentIn$}
+
+    \titel{\thetitle}
+
+    $if(subtitle)$
+    \begin{center}
+      \large{$subtitle$}
+    \end{center}
+    $endif$
+
+    \vspace*{\fill}
+
+    \begin{flushleft}
+        \textbf{Name: \theauthor}\\
+        \textbf{Matrikelnummer: $MeineMatrikelnummer$}\\[0.5cm]
+        $MeineMail$\\
+        $MeineAdresse$\\
+        $MeinOrt$\\[0.5cm]
+        $MeinStudiengang$\\
+        $MeinePrOrdnung$\\[2cm]
+        \textbf{$MeinModul$, Prüfungsnummer: $MeinePrNummer$}\\
+        \textbf{Datum der Abgabe: \thedate}
+    \end{flushleft}
+\end{titlepage}
+% +++++++++ Ende Mein Template +++++++++
 
 $for(include-before)$
 $include-before$
@@ -640,6 +729,27 @@ $else$
 $endif$
 
 $endif$
+
+% +++++++++ Mein Template Änderungen +++++++++
+\newpage
+\section*{Erklärung der wissenschaftlichen Redlichkeit}
+
+Hiermit versichere ich, \theauthor, dass ich die
+vorliegende Arbeit selbstständig und ohne Benutzung anderer
+als der angegebenen Hilfsmittel angefertigt habe. Die aus
+fremden Quellen wörtlich oder sinngemäß übernommenen Gedanken
+sind als solche gekennzeichnet. Diese Hausarbeit wurde
+in gleicher oder ähnlicher Form noch keiner anderen
+Prüfungsbehörde vorgelegt.
+
+\vspace*{1cm}
+
+Passau, den \thedate\\[0.5cm]
+\hspace{0.5cm} \makebox[4cm]{\hrulefill}\\
+\theauthor
+
+% +++++++++ Ende Mein Template +++++++++
+
 $for(include-after)$
 $include-after$
 
