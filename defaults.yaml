@@ -6,5 +6,5 @@ toc: true
 toc-depth: 3
 number-sections: true
 
-template: ./default.latex
-metadata-file: ./metadata.yaml
+template: default.latex
+metadata-file: metadata.yaml
