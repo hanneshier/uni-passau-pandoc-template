@@ -8,6 +8,7 @@ csl: "./csl/apa.csl"
 bibliography: "./bibliography.bib"
 
 geometry:
+  - left=3cm
   - right=2.5cm
   - top=2cm
   - bottom=2cm
@@ -20,20 +21,20 @@ documentclass: article
 logo: "./img/logo-sobi.png"
 
 title: Titel
+# subtitle: Untertitel
 author: Vorname Nachname
-subtitle: Untertitel
-
 date: 1. Januar 2023
-MeinLehrstuhl: Lehrstuh
+
+MeinLehrstuhl: Lehrstuhl
 MeinProf: LehrstuhlinhaberIn
 MeineVeranstaltung: "1234 Hauptseminar: Seminartitel"
+MeinSemester: Sommersemester 23
 MeinDozentIn: "DozentIn"
-MeinSemester: SoSe 23
 MeineMatrikelnummer: "123"
 MeineMail: mail@example.com
+MeineAdresse: "Straße 3"
 MeinOrt: 94032, Passau
 MeinStudiengang: Studiengang
 MeinePrOrdnung: Version 2018
 MeinModul: Modul
 MeinePrNummer: "54321"
-MeineAdresse: "Straße 3"
