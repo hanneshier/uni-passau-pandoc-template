@@ -1,0 +1,23 @@
+name: Cleanup Temporary Branches
+
+on:
+  pull_request_target:
+    types:
+      - closed  # Wird ausgelöst, wenn ein PR geschlossen oder gemerged wird
+
+jobs:
+  cleanup_temp_branches:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.head.repo.fork == false
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Stellt sicher, dass alle Branches abgerufen werden
+
+      - name: Delete temporary branch
+        if: startsWith(github.event.pull_request.head.ref, 'pr-')
+        run: |
+          BRANCH_NAME=${{ github.event.pull_request.head.ref }}
+          echo "Deleting branch $BRANCH_NAME"
+          git push origin --delete $BRANCH_NAME

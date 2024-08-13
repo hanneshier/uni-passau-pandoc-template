@@ -1,0 +1,22 @@
+name: Sync Review Branch with Master
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  reset_review_branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          ref: master  # Check out the latest master branch
+
+      - name: Reset review branch to master
+        run: |
+          git fetch origin  # Ensure we have the latest state of all branches
+          git checkout review
+          git reset --hard origin/master  # Hard reset review branch to match master
+          git push --force origin review  # Push the reset review branch to the remote

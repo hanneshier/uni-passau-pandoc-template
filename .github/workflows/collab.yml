@@ -1,0 +1,53 @@
+name: Handle Push to Review
+
+on:
+  push:
+    branches:
+      - review
+
+jobs:
+  create_pull_request:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Git
+        run: |
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+
+      - name: Ignore changes to PDF files
+        run: |
+          PDF_FILES=$(ls *.pdf 2>/dev/null || true)
+          if [ -n "$PDF_FILES" ]; then
+            for file in $PDF_FILES; do
+              git update-index --assume-unchanged "$file"
+            done
+          else
+            echo "No PDF files found, skipping..."
+          fi
+
+      - name: Get last commit message
+        id: get_commit_message
+        run: |
+          COMMIT_MESSAGE=$(git log -1 --pretty=%B)
+          echo "commit_message=${COMMIT_MESSAGE}" >> $GITHUB_ENV
+
+      - name: Create a temporary branch
+        run: |
+          TIMESTAMP=$(date +"%Y-%m-%d-%H%M%S")
+          TEMP_BRANCH="pr-${{ github.actor }}-$TIMESTAMP"
+          git checkout -b $TEMP_BRANCH
+          git push origin $TEMP_BRANCH
+          echo "temp_branch=$TEMP_BRANCH" >> $GITHUB_ENV
+
+      - name: Create Pull Request to dev branch
+        run: |
+          curl -X POST \
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/${{ github.repository }}/pulls \
+            -d "{\"title\":\"PR from ${{ github.actor }}: ${{ env.commit_message }}\",\"head\":\"${{ env.temp_branch }}\",\"base\":\"dev\"}"
+
+      # No cleanup step for now to ensure the PR remains open

@@ -3,7 +3,9 @@ name: Convert Markdown to PDF (pandoc)
 on: 
   push:
     branches:
-      - master
+      - dev
+    paths:
+      - 'Hausarbeit.md'
 
 jobs:
   convert:
