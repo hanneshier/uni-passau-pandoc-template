@@ -1,6 +1,6 @@
 # Uni Passau Pandoc LaTeX Template
 
-Latex Template für Hausarbeiten an der Universität Passau. Das Template folgt mehr oder weniger den [Vorgaben des Lehrstuhls für Politikwissenschaften](https://www.sobi.uni-passau.de/politikwissenschaft/studium-und-lehre/haus-und-abschlussarbeiten) und erfüllt größtenteils auch die Anforderungen des [Lehrstuhl für Soziologie](https://www.sobi.uni-passau.de/soziologie/studium-und-lehre/hinweise-zu-haus-und-abschlussarbeiten) (dem Titelblatt müssten evtl. ein paar Angaben hinzugefügt werden). Abweichungen gibt es bei der Schriftart, die aber in der metadata.yaml angepasst werden kann.
+Latex Template für Hausarbeiten an der Universität Passau. Das Template folgt mehr oder weniger den [Vorgaben des Lehrstuhls für Politikwissenschaften](https://www.sobi.uni-passau.de/politikwissenschaft/studium-und-lehre/haus-und-abschlussarbeiten) und erfüllt größtenteils auch die Anforderungen des [Lehrstuhls für Soziologie](https://www.sobi.uni-passau.de/soziologie/studium-und-lehre/hinweise-zu-haus-und-abschlussarbeiten) (dem Titelblatt müssten evtl. ein paar Angaben hinzugefügt werden). Abweichungen gibt es bei der Schriftart, die aber in der metadata.yaml angepasst werden kann.
 
 # How To
 
@@ -30,4 +30,4 @@ Wenn die Arbeit mit Github synchronisiert wird, kann der PDF Export auch per Git
 
 # Einfacher Feedback-Prozess mit prose.io und GitHub Actions
 
-comming soon
+coming soon
