@@ -549,7 +549,6 @@ $if(logo)$
 $endif$
 
 % +++++++++ Mein Template Änderungen +++++++++
-\usepackage{blindtext}
 \usepackage{titling}
 \clubpenalty=10000
 \widowpenalty=10000
