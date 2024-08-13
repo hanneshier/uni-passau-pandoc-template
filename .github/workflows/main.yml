@@ -3,7 +3,7 @@ name: Convert Markdown to PDF
 on: 
   push:
     branches:
-      - master
+      - main
 
 jobs:
   convert:
@@ -13,10 +13,12 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v3
 
-    - name: Convert Hausarbeit.md to PDF using Pandoc LaTeX Docker
-      uses: docker://pandoc/extra:latest
-      with:
-        args: --defaults defaults.yaml Hausarbeit.md -o Hausarbeit.pdf
+    - name: Convert Hausarbeit.md to PDF using Pandoc LaTeX Docker with Custom Packages
+      run: |
+        docker run --rm \
+          -v $(pwd):/data \
+          pandoc/latex:latest \
+          /bin/sh -c "apt-get update && apt-get install -y texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra texlive-latex-recommended && pandoc --defaults defaults.yaml Hausarbeit.md -o Hausarbeit.pdf"
 
     - name: Commit PDF file
       run: |
