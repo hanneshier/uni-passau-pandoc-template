@@ -1,0 +1,14 @@
+prose:
+  ignore:
+    - /.github
+    - /img
+    - /csl
+    - _prose.yml
+    - .gitignore
+    - LICENSE
+    - default.latex
+    - defaults.yaml
+    - metadata.yaml
+    - Hausarbeit.pdf
+    - bibliography.bib
+    - README.md
