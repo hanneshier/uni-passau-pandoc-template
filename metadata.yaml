@@ -5,6 +5,7 @@ top-level-division: part
 link-citations: true
 
 csl: "./csl/apa.csl"
+bibliography: "./bibliography.bib"
 
 geometry:
   - right=2.5cm
