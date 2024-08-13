@@ -21,7 +21,7 @@ documentclass: article
 logo: "./img/logo-sobi.png"
 
 title: Titel
-# subtitle: Untertitel
+subtitle: Untertitel
 author: Vorname Nachname
 date: 1. Januar 2023
 
