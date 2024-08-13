@@ -4,6 +4,8 @@ reference-section-title: Literatur
 top-level-division: part
 link-citations: true
 
+csl: "./csl/apa.csl"
+
 geometry:
   - right=2.5cm
   - top=2cm
