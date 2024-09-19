@@ -3,6 +3,7 @@ link-bibliography: true
 reference-section-title: Literatur
 top-level-division: part
 link-citations: true
+heading-new-page: true
 
 csl: "./csl/apa.csl"
 bibliography: "./bibliography.bib"

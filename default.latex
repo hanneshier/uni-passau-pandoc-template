@@ -4,6 +4,9 @@
 $if(colorlinks)$
 \PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
 $endif$
+$if(heading-new-page)$
+\AddToHook{cmd/section/before}{\clearpage}
+$endif$
 $if(CJKmainfont)$
 \PassOptionsToPackage{space}{xeCJK}
 $endif$
