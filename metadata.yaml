@@ -18,6 +18,7 @@ fontsize: 12pt
 papersize: a4
 documentclass: article
 # fontfamily: tgtermes
+csquotes: true
 
 logo: "./img/logo-sobi.png"
 
