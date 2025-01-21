@@ -21,6 +21,7 @@ documentclass: article
 csquotes: true
 
 logo: "./img/logo-sobi.png"
+redlichkeit: true
 
 title: Titel
 subtitle: Untertitel

@@ -735,6 +735,9 @@ $endif$
 $endif$
 
 % +++++++++ Mein Template Änderungen +++++++++
+
+$if(redlichkeit)$
+
 \newpage
 \section*{Erklärung der wissenschaftlichen Redlichkeit}
 
@@ -749,6 +752,8 @@ oder ähnlicher Form noch keiner anderen Prüfungsbehörde vorgelegt.
 Passau, den \thedate\\[0.5cm]
 \hspace{0.5cm} \makebox[4cm]{\hrulefill}\\
 \theauthor
+
+$endif$
 
 % +++++++++ Ende Mein Template +++++++++
 
