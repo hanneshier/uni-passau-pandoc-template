@@ -581,9 +581,9 @@ $endif$
 
 \newcommand{\veranstaltung}[3]{
   \begin{center}
-    {#1}\\
-    {#2}\\
-    {#3}
+    \ifx&#1&\else{#1}\\\fi
+    \ifx&#2&\else{#2}\\\fi
+    \ifx&#3&\else{#3}\fi
   \end{center}
 }
 
